@@ -1,8 +1,10 @@
 import eslintPluginAstro from "eslint-plugin-astro";
 import tsParser from "@typescript-eslint/parser";
+import oxlint from "eslint-plugin-oxlint";
 
 export default [
   ...eslintPluginAstro.configs.recommended,
+  ...oxlint.configs['flat/recommended'],
   {
     files: ["**/*.astro"],
     languageOptions: {
