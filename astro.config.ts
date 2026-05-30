@@ -17,6 +17,8 @@ import {
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import config from "./astro-paper.config";
 
+import partytown from "@astrojs/partytown";
+
 export default defineConfig({
   site: config.site.url,
   integrations: [
@@ -24,6 +26,11 @@ export default defineConfig({
     sitemap({
       filter: page =>
         config.features?.showArchives !== false || !page.endsWith("/archives/"),
+    }),
+    partytown({
+      config: {
+        forward: ["dataLayer.push", "gtag"],
+      },
     }),
   ],
   i18n: {
@@ -74,3 +81,4 @@ export default defineConfig({
     svgOptimizer: svgoOptimizer(),
   },
 });
+

@@ -95,6 +95,36 @@ const rssHref = getRelativeLocaleUrl(
       )
     }
 
+    <!-- Google tag (gtag.js) -->
+    <script
+      is:inline
+      type="text/partytown"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JMQY010LB4"></script>
+    <script is:inline type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-JMQY010LB4");
+    </script>
+
+    <!-- 100% privacy-first analytics -->
+    <script
+      async
+      is:inline
+      type="text/partytown"
+      src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+    <noscript
+      ><img
+        src="https://queue.simpleanalyticscdn.com/noscript.gif"
+        alt=""
+        referrerpolicy="no-referrer-when-downgrade"
+      /></noscript
+    >
+
     <!--
       Inline FOUC-prevention script: sets data-theme on <html> before
       the browser paints. Runs synchronously, no defer/async.
